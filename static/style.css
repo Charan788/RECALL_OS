@@ -215,22 +215,6 @@ footer.foot canvas{position:absolute;inset:0;width:100%;height:100%}
   .f-nav{font-size:1.8rem}.f-foot{grid-template-columns:1fr}.f-foot .s{justify-content:flex-start}.f-h{display:none}
   .band{height:14rem}.cal{display:none}
 }
-.submit{position:relative;background:var(--background);color:var(--foreground);padding:8rem 2rem 9rem;overflow:hidden}
-.submit h2{font-size:clamp(3rem,6vw,5rem)}
-.submit h2 .stop{color:var(--accent)}
-.submit .lead{font-size:1.25rem;line-height:1.1;max-width:28rem;margin-top:1.5rem}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3.5rem}
-.grid3 .br{padding:1.4rem 1.6rem}
-.grid3 .n{font-family:var(--font-display);font-weight:500;font-size:2.375rem;line-height:.72;letter-spacing:-.08em;color:var(--accent)}
-.grid3 h3{font-family:var(--font-display);font-weight:700;font-size:1.5rem;line-height:.95;margin:1rem 0 .8rem}
-.grid3 p{text-transform:none;font-size:.9rem;line-height:1.4;color:rgb(9 10 11 / .65)}
-.split2{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:4rem}
-.split2 ul{margin-top:1.2rem;display:flex;flex-direction:column;gap:.7rem;font-size:.9rem;line-height:1}
-.split2 li{padding-bottom:.7rem;border-bottom:1px solid var(--ice-200)}
-.split2 li b{color:#008a96;font-weight:500}
-.runrow{display:flex;gap:2rem;align-items:center;flex-wrap:wrap;margin-top:4rem}
-.runrow .code{padding:1.2rem 1.6rem}
-@media(max-width:1023px){.grid3,.split2{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.rv,.w{transition:none!important;opacity:1!important;transform:none!important}}
 
 /* RecallOS integration: keep the reference's visual language while preserving native scrolling. */
@@ -251,7 +235,7 @@ body { overflow-x: hidden; }
 .db-status.online i { background: #04b991; box-shadow: 0 0 12px rgb(4 185 145 / .55); }
 .db-status.offline i { background: #cf5b58; }
 [data-explorer] canvas.graph { touch-action: none; }
-.ex-top h2 .split, [data-timeline] h2 .split, .pd h2 .split, .submit h2 .split, .f-h .split { gap: .3em; }
+.ex-top h2 .split, [data-timeline] h2 .split, .pd h2 .split, .f-h .split { gap: .3em; }
 .ex-top h2 { line-height: .95; }
 .ex-top { position: relative; z-index: 4; }
 .ex-bot { position: relative; z-index: 4; }
@@ -336,7 +320,7 @@ body { overflow-x: hidden; }
 /* Native page flow; subdued entrance motion only. */
 .rv, .w { opacity: 1; transform: none; }
 @media(max-width:1023px){ .pd .side { grid-template-columns: 1fr; } .handoff-grid { grid-template-columns: 1fr; } }
-@media(max-width:639px){ .mast { align-items: flex-start; flex-wrap: wrap; } .mast-right { width: 100%; margin-left: 0; justify-content: space-between; } .workspace-select { font-size: .58rem; } .workspace-select select { font-size: .62rem; } .db-status { font-size: .58rem; } .actions { grid-template-columns: 1fr; } .hero-col, .ex-col { padding-left: 1.25rem; padding-right: 1.25rem; } .meta { font-size: .82rem; } .panels { gap: .6rem; } .panels .br { padding: .75rem; } .panels dl { font-size: .65rem; } .stats dd { font-size: 1.65rem; } .pd { padding: 1.25rem 1.25rem 3rem; } .pd .side { margin-top: 2rem; } #memory-form { grid-template-columns: 1fr; } #memory-form label { grid-column: 1 / -1; } .memory-form-card, .memory-list-card { padding: .85rem; } .handoff-section { padding: 5rem 1.25rem; } .handoff-item { grid-template-columns: 1fr; } .grid3 { grid-template-columns: 1fr; gap: .85rem; } .split2 { grid-template-columns: 1fr; gap: 1.5rem; } .runrow { align-items: flex-start; } }
+@media(max-width:639px){ .mast { align-items: flex-start; flex-wrap: wrap; } .mast-right { width: 100%; margin-left: 0; justify-content: space-between; } .workspace-select { font-size: .58rem; } .workspace-select select { font-size: .62rem; } .db-status { font-size: .58rem; } .actions { grid-template-columns: 1fr; } .hero-col, .ex-col { padding-left: 1.25rem; padding-right: 1.25rem; } .meta { font-size: .82rem; } .panels { gap: .6rem; } .panels .br { padding: .75rem; } .panels dl { font-size: .65rem; } .stats dd { font-size: 1.65rem; } .pd { padding: 1.25rem 1.25rem 3rem; } .pd .side { margin-top: 2rem; } #memory-form { grid-template-columns: 1fr; } #memory-form label { grid-column: 1 / -1; } .memory-form-card, .memory-list-card { padding: .85rem; } .handoff-section { padding: 5rem 1.25rem; } .handoff-item { grid-template-columns: 1fr; } }
 @media(max-width:639px){ [data-hero] canvas.graph { opacity: .24; } .architecture .pd h2, #record .pd h2 { font-size: clamp(2.7rem, 11vw, 3.2rem); } }
 @media(prefers-reduced-motion:reduce){ *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; } }
 .sr:focus { position: fixed; z-index: 60; top: 1rem; left: 1rem; width: auto; height: auto; padding: .8rem 1rem; clip: auto; color: #090a0b; background: #02d2e3; }
@@ -349,3 +333,18 @@ body { overflow-x: hidden; }
 @media(max-width:639px){ .cal.memory-path { gap: .35rem; padding: 1rem .75rem; } .memory-path div { font-size: .55rem; } .memory-path div span { font-size: .48rem; } .memory-path > i { font-size: .72rem; } }
 .handoff-section #handoff-form label { color: var(--steel-400); }
 .architecture-stats > p:not(.eyebrow) { margin: .75rem 0 1rem; color: rgb(9 10 11 / .68); font-size: .85rem; line-height: 1.4; text-transform: none; }
+
+/* Keep the memory path after the complete write form, even when it grows past the viewport. */
+#record > .band {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  min-height: 8.5rem;
+  height: auto;
+}
+#record > .band .cal.memory-path { min-height: 8.5rem; }
+@media(max-width:639px) {
+  #record > .band, #record > .band .cal.memory-path { min-height: 0; }
+}
+
+
