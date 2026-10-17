@@ -313,8 +313,14 @@ def _node_view(key, labels, props):
 
 
 def _row_dict(result, row):
-    """Convert FalkorDB's (column name, type) headers into JSON key/value rows."""
-    headers = [column[0] if isinstance(column, (list, tuple)) else column
-               for column in result.header]
+    """Convert FalkorDB's (type, column name) headers into JSON key/value rows."""
+    headers = []
+    for column in result.header:
+        if isinstance(column, (list, tuple)):
+            names = [part for part in column if isinstance(part, str)]
+            headers.append(names[-1] if names else column[0] if column else column)
+        else:
+            headers.append(column)
     return dict(zip(headers, row))
+
 
