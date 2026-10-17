@@ -1,5 +1,3 @@
-# RECALL_OS
-
 # RecallOS
 
 A graph memory layer for agents that need to pick up work across sessions.
