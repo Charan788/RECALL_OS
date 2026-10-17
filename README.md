@@ -120,4 +120,3 @@ docker-compose.yml     Local FalkorDB service
 
 RecallOS doesn’t currently connect to an LLM. Search is keyword matching in Cypher, which keeps the demo’s behavior direct and easy to inspect. It also doesn’t include authentication, production deployment settings, or safeguards for private data.
 
-This prototype was built with help from OpenAI Codex. The graph model and queries are in the repo so they can be read and explained alongside the demo.
