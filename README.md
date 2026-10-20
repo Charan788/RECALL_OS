@@ -8,32 +8,43 @@ I built this for the Agent Memory and Coordination track at Graph Hacks. The dem
 
 ## Try it locally
 
-You’ll need Python 3.10 or newer and Docker Desktop (or another Docker Engine with Compose).
+You’ll need Python 3.10 or newer and Docker Desktop (or another Docker Engine with Compose). Run the commands from the folder containing `docker-compose.yml`.
 
-Start FalkorDB from the project folder:
+Start FalkorDB:
 
 ```powershell
 docker compose up -d
 ```
 
-Create a virtual environment and install the app:
+The FalkorDB browser uses port 3001 on your computer to avoid the common port 3000 conflict. If port 3001 is occupied too, change the left-hand port in the `3001:3000` mapping in `docker-compose.yml`.
+
+On Windows, create a virtual environment and install the app:
 
 ```powershell
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-Copy-Item .env.example .env
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+if (!(Test-Path .env)) { Copy-Item .env.example .env }
 ```
 
 Start the web app:
 
 ```powershell
-uvicorn app:app --reload
+.\.venv\Scripts\python.exe -m uvicorn app:app --reload
 ```
 
-Open [http://127.0.0.1:8000](http://127.0.0.1:8000). The FalkorDB browser is at [http://localhost:3000](http://localhost:3000).
+If `python` is not recognized, install Python 3.10 or newer and reopen PowerShell.
 
-On macOS or Linux, use `python3 -m venv .venv` and `source .venv/bin/activate` for the environment steps. The remaining commands are the same.
+On macOS or Linux, use these commands instead:
+
+```sh
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements.txt
+cp -n .env.example .env
+python -m uvicorn app:app --reload
+```
+
+Open [http://127.0.0.1:8000](http://127.0.0.1:8000). The FalkorDB browser is at [http://localhost:3001](http://localhost:3001).
 
 To see the flow, load the Atlas Login demo memory, then search for `Atlas Login`. You can also save an episode of your own, create a handoff to Support Agent, and acknowledge it from the handoff list.
 
